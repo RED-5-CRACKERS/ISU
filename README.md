@@ -14,4 +14,8 @@
 ## sh setup-for-termux.sh
 
 # usage:
+## isu -h
+## isu -l 127.0.0.1 -p 4444
+##
+## isu -l 127.0.0.1 -f 1000 -t 4545
 
