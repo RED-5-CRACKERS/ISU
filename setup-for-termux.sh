@@ -14,7 +14,7 @@ if [ $ins = 'y' ]
 then
     echo [THANKS]
     git clone https://github.com/RED-5-CRACKERS/Uni-cracker.git
-elif [ $ins = 'n']
+elif [ $ins = 'n' ]
 then
     echo [ BYE.... ]
 fi
