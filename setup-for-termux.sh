@@ -6,3 +6,17 @@ chmod +x isu.py
 rm -v setup-for-termux.sh setup.sh
 echo [*] simply isu
 isu -h
+echo
+echo
+echo
+echo -n "[ IF YOU WANT TO INSTALL MY ANOTHER SCRIPTS [Y|N]] > "
+read ins
+
+if [ $ins = 'y' ]
+then
+    echo [THANKS]
+    git clone https://github.com/RED-5-CRACKERS/Uni-cracker.git
+else
+    echo [ BYE.... ]
+
+fi
