@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt install python3
 cp isu.py /bin/isu
 chmod+x /bin/isu
