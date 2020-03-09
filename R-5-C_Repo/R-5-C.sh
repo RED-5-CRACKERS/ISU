@@ -15,10 +15,14 @@ then
     git clone https://www.github.com/RED-5-CRACKERS/Uni-cracker.git
 elif [ $opt = '2' ]
 then
-    git clone https://www.github.com/RED-5-CRACKERS/Hash_creator.git
+    git clone https://www.github.com/RED-5-CRACKERS/create_hash.git
 elif [ $opt = '3' ]
 then
     git clone https://www.github.com/RED-5-CRACKERS/ISU.git
 elif [ $opt = 'a' ]
 then
     git clone https://www.github.com/RED-5-CRACKERS/Uni-cracker.git
+    git clone https://www.github.com/RED-5-CRACKERS/create_hash.git
+    git clone https://www.github.com/RED-5-CRACKERS/ISU.git
+fi
+
