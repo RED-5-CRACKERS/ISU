@@ -16,7 +16,7 @@ then
     git clone https://www.github.com/RED-5-CRACKERS/Uni-cracker.git
 elif [ $opt = '2' ]
 then
-    https://github.com/RED-5-CRACKERS/creat_hash.git
+    https://www.github.com/RED-5-CRACKERS/creat_hash.git
 elif [ $opt = '3' ]
 then
     git clone https://www.github.com/RED-5-CRACKERS/ISU.git
