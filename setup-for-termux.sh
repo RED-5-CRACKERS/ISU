@@ -11,6 +11,7 @@ echo
 echo -n "[ IF YOU WANT TO INSTALL MY ANOTHER SCRIPTS [Y|N]] > "
 read ins
 while true
+do
     if [ $ins = 'y' ]
     then
         echo [THANKS]
@@ -20,6 +21,7 @@ while true
         echo [ BYE.... ]
         break
 
-fi
+    fi
+done
 isu -h
 
