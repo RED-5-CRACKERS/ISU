@@ -16,7 +16,7 @@ then
     git clone https://www.github.com/RED-5-CRACKERS/Uni-cracker.git
 elif [ $opt = '2' ]
 then
-    https://www.github.com/RED-5-CRACKERS/creat_hash.git
+    git clone https://www.github.com/RED-5-CRACKERS/creat_hash.git
 elif [ $opt = '3' ]
 then
     git clone https://www.github.com/RED-5-CRACKERS/ISU.git
@@ -26,4 +26,5 @@ then
     git clone https://www.github.com/RED-5-CRACKERS/creat_hash.git
     git clone https://www.github.com/RED-5-CRACKERS/ISU.git
 fi
+echo "files are downloaded in : R-5-C in home directory"
 
