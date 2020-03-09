@@ -10,18 +10,13 @@ echo
 echo
 echo -n "[ IF YOU WANT TO INSTALL MY ANOTHER SCRIPTS [Y|N]] > "
 read ins
-while true
-do
-    if [ $ins = 'y' ]
-    then
-        echo [THANKS]
-        git clone https://github.com/RED-5-CRACKERS/Uni-cracker.git
-    elif [ $ins = 'n']
-    then
-        echo [ BYE.... ]
-        break
-
-    fi
-done
+if [ $ins = 'y' ]
+then
+    echo [THANKS]
+    git clone https://github.com/RED-5-CRACKERS/Uni-cracker.git
+elif [ $ins = 'n']
+then
+    echo [ BYE.... ]
+fi
 isu -h
 
