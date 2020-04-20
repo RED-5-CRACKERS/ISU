@@ -1,5 +1,5 @@
 # ISU
-#PortScaner
+PortScaner
 
 # setup:
 * chmod +x setup.sh
