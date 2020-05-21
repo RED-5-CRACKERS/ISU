@@ -1,37 +1,8 @@
 #!/bin/python3
-#!/data/data/com.termux/files/usr/bin/python3
-#_______________________________________________________________________________________________________________________________________________________
-
-# AUTHER :: MADHAVA
-
-#    ORG :: https://www.github.com/RED-5-CRACKERS
-
-
-#  THANKS FOR USING MYSCRIPT
-# LIFE IS LIKE A FUN 
-
-
-#_______________________________________________________________________________________________________________________________________________________
 import argparse
 import socket
 import sys
-#_________________________________________________________________________________________________________________________________________________c_code
-
-_r='\u001b[36;1m'
-
-_g='\u001b[32m'
-
-_y='\u001b[33;1m'
-
-_b='\u001b[34;1m'
-
-_h='\u001b[31;1m'
-
-_H='\u001b[42;1m'
-
-_e='\u001b[0m'
-print(_r)
-#________________________________________________________________________________________________________________________________________________________
+from time import sleep
 pars=argparse.ArgumentParser(description=' [ _______________________  Simple Port Scaner  _______________________ ]',epilog='''EG:
     [ isu -l 127.0.0.1 -p 4444 ] OR
     [ isu -l 127.0.0.1 -f 80 -t 4444 ]''')
@@ -40,108 +11,28 @@ pars.add_argument('-p',type=int,dest='port',help='[ specify port .______________
 pars.add_argument('-f',dest='frm',type=int,help='[ scan open port "-f" from ... _______________________ ]')
 pars.add_argument('-t',dest='to',type=int,help='[ ... "-t" to  ports . ________________________________ ]')
 arg=pars.parse_args()
-#_________________________________________________________________________________________________________________________________________________________
-host=arg.host
-port=arg.port
-frm =arg.frm
-to  =arg.to
-#__________________________________________________________________________________________________________________________________________________________
-h_name=socket.gethostname()
-ipv4=socket.gethostbyname(h_name)
-
-
-#__________________________________________________________________________________________________________________________________________________________
-def about():
-    print(_h,"""                    
-                                       [*]       Org ::  https://www.github.com/RED-5-CRACKERS
-                                       [*]   Content ::  simple port scaner
-                                       [*] Available ::  https://www.github.com/RED-5-CRACKERS/Uni-cracker.git """)
-#__________________________________________________________________________________________________________________________________________________________
-
-
-
-
-def banner():
-    print(_r,",---------------------------------------------------------------------------------------------,")
-    print(" |     8888888    .d8888b.    888     888                                                      |")
-    print(" |       888     d88P  Y88b   888     888                                                      |")
-    print(" |       888     Y88b.        888     888                                                      |")
-    print(' |       888      "Y888b.     888     888                                                      |')
-    print(' |       888         "Y88b.   888     888                                                      |')
-    print(' |       888           "888   888     888                                                      |')
-    print(" |       888     Y88b  d88P   Y88b. .d88P     ( I SCAN YOU )                                   |")
-    print(' |     888I888    "YSCANP"     "Y8YOU8P"                                                       |')
-    print(" |                                                 [*] VALNEARABILTY &                         |")
-    print(" |                                                 [*] SECURITY                                |")
-    print(" |                                                                                             |")
-    print(" |   ",_y,"  [ HOSTNAME ] ::",_r," [ ",_g,h_name,_r," ]                                                   |")
-    print(" |                                                                                             |")
-    print(" |   ",_y,"[ PROTO_IPV4 ] ::",_r," [ ",_g,ipv4,_r," ]                                                   |")
-    print(" |                                                                    Version 1.0              |")
-    print(" |                                                                                             |")
-    print(" |                                        ",_h,"                                 [ MADHAVA ]",_r,"     |")
-    print(" |---------------------------------------------------+-----------------------------------------|",_r)
-    print(" |       ",_g,"    [ PORT ]   ",_r,"                         |  ",_g,"      [ STATUS ] ",_r,"                  |")
-    print(" '---------------------------------------------------+-----------------------------------------'")
-    print("                                                                                        ")
-#____________________________________________________________________________________________________________________________________________________________
-banner()
-
-
-
-
-
-
-
-def c_port(frm):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    if s.connect_ex((host, frm)):
-        a=1
-    else:
-        print(_y,'             [ ',frm ," ]                                         [ OPEN ]                            ")
-
-#____________________________________________________________________________________________________________________________________________________________
-
-if frm is not None:
-
-    if frm > to:
-        print(_h,"          [     '-f'  MUST BE SMALLER VALUE WHILE COMPARING  '-t'    ] ")
-        exit()
-
-    if to > 65535:
-        print(_h,"               [   PORT MUST BE 0 - 65535  ]")
-        exit()
-
-    while frm <= to:
-        c_port(frm)
-        frm+=1
-    print()
-    print(_h,'                      [ BALANCE ARE CLOSED IN THIS GIVEN RANGE ]                                                  ')
-#_____________________________________________________________________________________________________________________________________________________________
-
-
-
-def port_s(port):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    if s.connect_ex((host , port)):
-        print(_y,"             [ ",port," ]                                         [ CLOSED ]                        ")
-    else:
-        print(_y,'             [ ',port," ]                                         [ OPEN ]                            ")
-
-#_____________________________________________________________________________________________________________________________________________________________
-
-if port is not None :
-    if port >= 65535:
-        print(_h,"               [   PORT MUST BE 0 - 65535  ]")
-        exit()
-    port_s(port)
-#_____________________________________________________________________________________________________________________________________________________________
-
-
-print()
-print(_r," _____________________________________________________________________________________________")
-print()
-about()
-
-
-#____________________________________________________________________________________________________________________________________________________________
+host = arg.host
+port = arg.port
+frm = arg.frm
+to  = arg.to
+def _check_(_host_,_port_,_s_,_min_,_max_):
+    try:
+        if _s_ == 0:
+            _socket_=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            if _socket_.connect_ex((_host_,_port_)):
+                print("[\u001b[31;1mPort\u001b[0m] : {} is Close".format(_port_))
+            else:
+                print("[\u001b[31;1mPort\u001b[0m] : {} is Open".format(_port_))
+        if _s_ == 1:
+            for __port__ in range(_min_,_max_):
+                _socket_=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                if _socket_.connect_ex((_host_,__port__)):
+                    pass
+                else:
+                    print("[\u001b[31;1mPort\u001b[0m] : {} is Open".format(__port__))
+    except:
+        print("\u001b[31;1m"+str(sys.exc_info()[1])+"\u001b[32;1m Use --help\u001b[0m")
+if frm != None and to != None:
+    _check_(host,0,1,frm,to)
+else:
+    _check_(host,port,0,0,0)
