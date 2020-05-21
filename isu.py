@@ -1,8 +1,7 @@
-#!/bin/python3
+#!/usr/bin/python3
 import argparse
 import socket
 import sys
-from time import sleep
 pars=argparse.ArgumentParser(description=' [ _______________________  Simple Port Scaner  _______________________ ]',epilog='''EG:
     [ isu -l 127.0.0.1 -p 4444 ] OR
     [ isu -l 127.0.0.1 -f 80 -t 4444 ]''')
